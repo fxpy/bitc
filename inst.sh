@@ -25,12 +25,19 @@ function setupVars {
 
 function installRust {
 	echo -e '\n\e[42mInstall Rust\e[0m\n' && sleep 1
-	sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
-	. $HOME/.cargo/env
-	rustup update nightly-2021-03-01
-	rustup update stable
-	rustup target add wasm32-unknown-unknown --toolchain nightly-2021-03-01
-	rustup default nightly-2021-03-01
+	curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+        source $HOME/.cargo/env
+
+        rustup default stable
+
+        rustup update nightly-2021-07-01
+        #rustup update stable
+        rustup target add wasm32-unknown-unknown --toolchain nightly-2021-07-01
+        #WASM_BUILD_TOOLCHAIN=nightly-2021-07-02 cargo build --release
+        rustup update
+        rustup update nightly
+        rustup target add wasm32-unknown-unknown --toolchain nightly
 }
 
 function installDeps {
