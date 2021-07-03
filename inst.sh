@@ -44,7 +44,7 @@ function installDeps {
 	echo -e '\n\e[42mPreparing to install\e[0m\n' && sleep 1
 	cd $HOME
 	sudo apt update
-	sudo apt install -y cmake make clang pkg-config libssl-dev build-essential git jq libclang-dev clang curl libz-dev jq < "/dev/null"
+	sudo apt install cmake make clang pkg-config libssl-dev build-essential git jq libclang-dev clang curl libz-dev jq -y < "/dev/null"
 	installRust
 }
 
