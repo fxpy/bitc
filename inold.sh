@@ -12,7 +12,6 @@ bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     . $HOME/.bash_profile
 fi
-sleep 1 && curl -s https://api.nodes.guru/logo.sh | bash && sleep 3
 
 function setupVars {
         if [ ! $BITCOUNTRY_NODENAME ]; then
@@ -25,9 +24,13 @@ function setupVars {
 }
 
 function installRust {
-        echo -e '\n\e[42mInstall Rust\e[0m\n' && sleep 1
-        sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
-        . $HOME/.cargo/env
+	echo -e '\n\e[42mInstall Rust\e[0m\n' && sleep 1
+	sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
+	source $HOME/.cargo/env
+	rustup update nightly-2021-03-01
+	rustup update stable
+	rustup target add wasm32-unknown-unknown --toolchain nightly-2021-03-01
+	rustup default nightly-2021-03-01
 }
 
 function installDeps {
