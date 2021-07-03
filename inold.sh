@@ -12,6 +12,7 @@ bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     . $HOME/.bash_profile
 fi
+sleep 1 && curl -s https://api.nodes.guru/logo.sh | bash && sleep 3
 
 function setupVars {
         if [ ! $BITCOUNTRY_NODENAME ]; then
@@ -33,7 +34,7 @@ function installDeps {
         echo -e '\n\e[42mPreparing to install\e[0m\n' && sleep 1
         cd $HOME
         sudo apt update
-        sudo apt install cmake make clang pkg-config libssl-dev build-essential git jq libclang-dev clang curl libz-dev jq -y < "/dev/null"
+        sudo apt install cmake make clang pkg-config libssl-dev build-essential git jq libclang-dev -y < "/dev/null"
         installRust
 }
 
@@ -69,9 +70,9 @@ Storage=persistent
 EOF
 sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
-echo -e '\n\e[42mRunning a service\e[0m\n' && sleep 1
-sudo systemctl enable bitcountryd
-sudo systemctl restart bitcountryd
+#echo -e '\n\e[42mRunning a service\e[0m\n' && sleep 1
+#sudo systemctl enable bitcountryd
+#sudo systemctl restart bitcountryd
 
 echo -e '\n\e[42mCheck node status\e[0m\n' && sleep 1
 if [[ `service bitcountryd status | grep active` =~ "running" ]]; then
