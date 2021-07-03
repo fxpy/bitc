@@ -47,7 +47,7 @@ function installSoftware {
         git clone https://github.com/bit-country/Bit-Country-Blockchain.git
         cd Bit-Country-Blockchain
         git checkout bfece87795f3b4bd4be225989af2ed717fbf9f8c
-        ./scripts/init.sh
+        #./scripts/init.sh
         cargo build --release --features=with-bitcountry-runtime
 }
 
