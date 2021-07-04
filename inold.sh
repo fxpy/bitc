@@ -37,8 +37,8 @@ function installDeps {
         echo -e '\n\e[42mPreparing to install\e[0m\n' && sleep 1
         cd $HOME
         sudo apt update
-        sudo apt install cmake make clang pkg-config libssl-dev build-essential git jq libclang-dev -y < "/dev/null"
-        installRust
+        sudo apt install cmake make clang pkg-config libssl-dev build-essential git jq libclang-dev curl libz-dev -y
+	installRust
 }
 
 function installSoftware {
