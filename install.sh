@@ -11,15 +11,18 @@ sudo apt install -y cmake make clang pkg-config libssl-dev build-essential git j
 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
-rustup update nightly
+rustup update nightly-2021-10-13
 rustup update stable
-rustup target add wasm32-unknown-unknown --toolchain nightly
-rustup default nightly
+rustup target add wasm32-unknown-unknown --toolchain nightly-2021-10-13
+rustup default nightly-2021-10-13
 
 
 git clone https://github.com/bit-country/Metaverse-Network.git
 cd Metaverse-Network
-git checkout tewai-v0.0.1
+git pull origin master
+git checkout 9832124d1e00ae6014d6d363721197c4e1ea6415
+rustup update nightly-2021-10-13
+rustup update stable
 
 
 cargo build --release --features=with-tewai-runtime
