@@ -1,5 +1,7 @@
 # bitcountry
 
+! This is not docker version! Only binaries install and update from bitcountry node to metaverse node. All chains remains the same.
+
 ## Update to metaverse binary 0.0.1
 
 ```
