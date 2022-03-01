@@ -19,8 +19,8 @@ rustup default nightly-2021-10-13
 
 git clone https://github.com/bit-country/Metaverse-Network.git
 cd Metaverse-Network
-git pull origin master
-git checkout 9832124d1e00ae6014d6d363721197c4e1ea6415
+git pull origin release-0.0.3
+git checkout 74757f8348e11214e69ef7a0c2395fe266021013
 rustup update nightly-2021-10-13
 rustup update stable
 
