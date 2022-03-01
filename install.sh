@@ -11,17 +11,17 @@ sudo apt install -y cmake make clang pkg-config libssl-dev build-essential git j
 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
-rustup update nightly-2022-01-31
+rustup update nightly-2022-01-21
 rustup update stable
-rustup target add wasm32-unknown-unknown --toolchain nightly-2022-01-31
-rustup default nightly-2022-01-31
+rustup target add wasm32-unknown-unknown --toolchain nightly-2022-01-21
+rustup default nightly-2022-01-21
 
 
 git clone https://github.com/bit-country/Metaverse-Network.git
 cd Metaverse-Network
 git pull origin release-0.0.3
 git checkout 74757f8348e11214e69ef7a0c2395fe266021013
-rustup update nightly-2022-01-31
+rustup update nightly-2022-01-21
 rustup update stable
 
 
