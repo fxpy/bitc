@@ -15,5 +15,6 @@ wget -O $HOME/Bit-Country-Blockchain/target/release/bitcountry-node https://gith
 chmod +x $HOME/Metaverse-Network/target/release/metaverse-node
 chmod +x $HOME/Bit-Country-Blockchain/target/release/bitcountry-node
 
+systemctl daemon-reload
 systemctl restart bitcountryd.service
 systemctl status bitcountryd.service
